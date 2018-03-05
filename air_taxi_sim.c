@@ -126,28 +126,31 @@ void *FnAirplane(void *cl_id)
         
         printf("Airplane %i arrives with %i passengers\n",index,num_passengers);
 
-        //down empty
-        sem_wait(&empty);
-        //down mutex
-        pthread_mutex_lock(&mutex);
+        char str[7];
 
         //critical section
         for(int p=0;p<num_passengers;p++){
-            char str[7];
 
+            //down empty
+            sem_wait(&empty);
+            //down mutex
+            pthread_mutex_lock(&mutex);
+        
             sprintf(str,"1%.3d%.3d",index,p);
             int passenger_id = atoi(str);
             enqueue(queue,passenger_id);
             printf("Passenger 1%.3d%.3d of airplane %i arrives to platform\n",index,p,index);
+            
+            //up mutex
+            pthread_mutex_unlock(&mutex);
+
+            //up full
+            sem_post(&full);
         }
 
-        //up mutex
-        pthread_mutex_unlock(&mutex);
+        
 
-        //up full
-        sem_post(&full);
-
-        //sleep
+        //sleep for 1 hour
         sleep(1);
     }
 }
@@ -168,8 +171,6 @@ void *FnTaxi(void *pr_id)
 
         //critical section
         int pickup = dequeue(queue);
-        printf("Taxi driver %i picks up client %d from the platform\n",index,pickup);
-
 
         //up mutex
         pthread_mutex_unlock(&mutex);
@@ -177,9 +178,15 @@ void *FnTaxi(void *pr_id)
         //up empty
         sem_post(&empty);
 
-        //sleep
-        sleep(0.1);
+        printf("Taxi driver %i picks up client %d from the platform\n",index,pickup);
+
+
+        //sleep for 10 to 30 minutes
+        int taxi_interval = rand() % (30 + 1 - 10) + 10;
+
+        sleep(taxi_interval/60);
     }
+    
 }
 
 int main(int argc, char *argv[])
