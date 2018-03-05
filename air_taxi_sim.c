@@ -116,11 +116,61 @@ struct Queue *queue;
 /*Producer Function: Simulates an Airplane arriving and dumping 5-10 passengers to the taxi platform */
 void *FnAirplane(void *cl_id)
 {
+    int i, passenger, index;
+
+    index = (int) cl_id;
+
+    while(1){
+        //make passenger
+        int num_passengers = rand() % (10 + 1 - 5) + 5;
+        
+        printf("Airplane %i arrives with %i passengers\n", index, num_passengers);
+
+        //down empty
+        sem_wait(&empty);
+        //down mutex
+        sem_wait(&mutex);
+
+        //critical section
+        for(int p=0;p<num_passengers;p++){
+            enqueue(queue,p);
+        }
+
+        //up mutex
+        sem_post(&mutex);
+        //up full
+        sem_post(&full);
+
+        //sleep
+        sleep(1);
+    }
 }
 
 /* Consumer Function: simulates a taxi that takes n time to take a passenger home and come back to the airport */
 void *FnTaxi(void *pr_id)
 {
+    int i, passenger, index;
+    index = (int) pr_id;
+    while(1){
+        //make passenger
+        passenger = i;
+
+        //down full
+        sem_wait(&full);
+        //down mutex
+        sem_wait(&mutex);
+
+        //critical section
+
+
+        //up mutex
+        sem_post(&mutex);
+        //up empty
+        sem_post(&empty);
+
+        //sleep
+        sleep(1);
+    }
 }
 
 int main(int argc, char *argv[])
@@ -157,9 +207,12 @@ int main(int argc, char *argv[])
         airplane_ids[i] = malloc(sizeof(int));
         *airplane_ids[i] = i;
         // Print an error if one occurs
-        if (pthread_create(&a_threads[i], NULL, FnAirplane, airplane_ids[i]) != 0)
+        if (pthread_create(&a_threads[i], NULL, FnAirplane, airplane_ids[i]) == 0)
         {
-            printf("Error with plane %i\n", i);
+            printf("Creating airplane thread %i\n", i);
+        } else {
+            printf("Error with airplane thread %i\n", i);
+
         }
     }
 
@@ -169,9 +222,11 @@ int main(int argc, char *argv[])
         taxi_ids[i] = malloc(sizeof(int));
         *taxi_ids[i] = i;
         // Print an error if one occurs
-        if (pthread_create(&t_threads[i], NULL, FnTaxi, taxi_ids[i]) != 0)
+        if (pthread_create(&t_threads[i], NULL, FnTaxi, taxi_ids[i]) == 0)
         {
-            printf("Error with taxi %i\n", i);
+            printf("Creating taxi thread %i\n", i);
+        } else {
+            printf("Error with taxi thread %i\n", i);
         }
     }
 
