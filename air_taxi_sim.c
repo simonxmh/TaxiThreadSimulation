@@ -21,8 +21,8 @@
 #include <semaphore.h>
 
 int BUFFER_SIZE = 100; //size of queue
-sem_t empty;
 sem_t full;
+sem_t empty;
 sem_t mutex;
 
 // A structure to represent a queue
@@ -142,9 +142,9 @@ int main(int argc, char *argv[])
     pthread_t a_threads[num_airplanes];
     pthread_t t_threads[num_taxis];
 
-    sem_init(full, 0, 0);
-    sem_init(empty, 0, BUFFER_SIZE);
-    pthread_mutex_init(mutex, NULL);
+    sem_init(&full, 0, 0);
+    sem_init(&empty, 0, BUFFER_SIZE);
+    pthread_mutex_init(&mutex,NULL);
 
     //create arrays of integer pointers to ids for taxi / airplane threads
     int *taxi_ids[num_taxis];
