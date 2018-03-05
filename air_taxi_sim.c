@@ -118,7 +118,7 @@ void *FnAirplane(void *cl_id)
 {
     int i, passenger, index;
 
-    index = (int) cl_id;
+    index = (intptr_t) cl_id;
 
     while(1){
         //make passenger
@@ -127,13 +127,14 @@ void *FnAirplane(void *cl_id)
         printf("Airplane %i arrives with %i passengers\n", index, num_passengers);
 
         //down empty
-        sem_wait(&empty);
+        sem_trywait(&empty);
         //down mutex
         sem_wait(&mutex);
 
         //critical section
         for(int p=0;p<num_passengers;p++){
             enqueue(queue,p);
+            printf("ASD");
         }
 
         //up mutex
@@ -150,7 +151,7 @@ void *FnAirplane(void *cl_id)
 void *FnTaxi(void *pr_id)
 {
     int i, passenger, index;
-    index = (int) pr_id;
+    index = (intptr_t) pr_id;
     while(1){
         //make passenger
         passenger = i;
@@ -161,7 +162,7 @@ void *FnTaxi(void *pr_id)
         sem_wait(&mutex);
 
         //critical section
-
+        dequeue(queue);
 
         //up mutex
         sem_post(&mutex);
@@ -181,6 +182,7 @@ int main(int argc, char *argv[])
 
     num_airplanes = atoi(argv[1]);
     num_taxis = atoi(argv[2]);
+
 
     printf("You entered: %d airplanes per hour\n", num_airplanes);
     printf("You entered: %d taxis\n", num_taxis);
@@ -206,8 +208,8 @@ int main(int argc, char *argv[])
     {
         airplane_ids[i] = malloc(sizeof(int));
         *airplane_ids[i] = i;
-        // Print an error if one occurs
-        if (pthread_create(&a_threads[i], NULL, FnAirplane, airplane_ids[i]) == 0)
+
+        if (pthread_create(&a_threads[i], NULL, FnAirplane, (void*)*airplane_ids[i]) == 0)
         {
             printf("Creating airplane thread %i\n", i);
         } else {
@@ -221,8 +223,8 @@ int main(int argc, char *argv[])
     {
         taxi_ids[i] = malloc(sizeof(int));
         *taxi_ids[i] = i;
-        // Print an error if one occurs
-        if (pthread_create(&t_threads[i], NULL, FnTaxi, taxi_ids[i]) == 0)
+
+        if (pthread_create(&t_threads[i], NULL, FnTaxi, (void*)*taxi_ids[i]) == 0)
         {
             printf("Creating taxi thread %i\n", i);
         } else {
