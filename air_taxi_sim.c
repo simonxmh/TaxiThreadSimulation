@@ -117,7 +117,6 @@ struct Queue *queue;
 void *FnAirplane(void *cl_id)
 {
     int index;
-
     index = *((int*)cl_id);
 
     while(1){
@@ -128,8 +127,11 @@ void *FnAirplane(void *cl_id)
 
         if(isFull(queue)){
             printf("Platform is full: Rest of passengers of plane %i take the bus\n",index);
+            //sleep for 1 hour
+            sleep(1);
             continue;
         }
+
 
         char str[7];
 
@@ -143,8 +145,11 @@ void *FnAirplane(void *cl_id)
         
             sprintf(str,"1%.3d%.3d",index,p);
             int passenger_id = atoi(str);
-            enqueue(queue,passenger_id);
             printf("Passenger 1%.3d%.3d of airplane %i arrives to platform\n",index,p,index);
+
+            
+            enqueue(queue,passenger_id);
+
             
             //up mutex
             pthread_mutex_unlock(&mutex);
@@ -157,6 +162,7 @@ void *FnAirplane(void *cl_id)
 
         //sleep for 1 hour
         sleep(1);
+    
     }
 }
 

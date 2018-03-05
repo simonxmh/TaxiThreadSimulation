@@ -1,0 +1,306 @@
+You entered: 2 airplanes per hour
+You entered: 2 taxis
+Creating airplane thread 0
+Creating airplane thread 1
+Airplane 0 arrives with 6 passengers
+Creating taxi thread 0
+Passenger 1000000 of airplane 0 arrives to platform
+Passenger 1000001 of airplane 0 arrives to platform
+Passenger 1000002 of airplane 0 arrives to platform
+Passenger 1000003 of airplane 0 arrives to platform
+Passenger 1000004 of airplane 0 arrives to platform
+Passenger 1000005 of airplane 0 arrives to platform
+Creating taxi thread 1
+Airplane 1 arrives with 9 passengers
+Passenger 1001000 of airplane 1 arrives to platform
+Passenger 1001001 of airplane 1 arrives to platform
+Passenger 1001002 of airplane 1 arrives to platform
+Passenger 1001003 of airplane 1 arrives to platform
+Passenger 1001004 of airplane 1 arrives to platform
+Passenger 1001005 of airplane 1 arrives to platform
+Passenger 1001006 of airplane 1 arrives to platform
+Passenger 1001007 of airplane 1 arrives to platform
+Passenger 1001008 of airplane 1 arrives to platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1000000 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1000001 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1000002 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1000003 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1000004 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1000005 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001000 from the platform
+Airplane 0 arrives with 6 passengers
+Passenger 1000000 of airplane 0 arrives to platform
+Passenger 1000001 of airplane 0 arrives to platform
+Passenger 1000002 of airplane 0 arrives to platform
+Passenger 1000003 of airplane 0 arrives to platform
+Airplane 1 arrives with 7 passengers
+Passenger 1000004 of airplane 0 arrives to platform
+Passenger 1000005 of airplane 0 arrives to platform
+Passenger 1001000 of airplane 1 arrives to platform
+Passenger 1001001 of airplane 1 arrives to platform
+Passenger 1001002 of airplane 1 arrives to platform
+Passenger 1001003 of airplane 1 arrives to platform
+Passenger 1001004 of airplane 1 arrives to platform
+Passenger 1001005 of airplane 1 arrives to platform
+Passenger 1001006 of airplane 1 arrives to platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001001 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001002 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001003 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001004 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001005 from the platform
+Airplane 1 arrives with 5 passengers
+Passenger 1001000 of airplane 1 arrives to platform
+Passenger 1001001 of airplane 1 arrives to platform
+Airplane 0 arrives with 5 passengers
+Passenger 1001002 of airplane 1 arrives to platform
+Passenger 1001003 of airplane 1 arrives to platform
+Passenger 1001004 of airplane 1 arrives to platform
+Passenger 1000000 of airplane 0 arrives to platform
+Passenger 1000001 of airplane 0 arrives to platform
+Passenger 1000002 of airplane 0 arrives to platform
+Passenger 1000003 of airplane 0 arrives to platform
+Passenger 1000004 of airplane 0 arrives to platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001006 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001007 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001008 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1000000 from the platform
+Airplane 1 arrives with 8 passengers
+Passenger 1001000 of airplane 1 arrives to platform
+Passenger 1001001 of airplane 1 arrives to platform
+Airplane 0 arrives with 8 passengers
+Passenger 1001002 of airplane 1 arrives to platform
+Passenger 1001003 of airplane 1 arrives to platform
+Passenger 1001004 of airplane 1 arrives to platform
+Passenger 1001005 of airplane 1 arrives to platform
+Passenger 1001006 of airplane 1 arrives to platform
+Passenger 1001007 of airplane 1 arrives to platform
+Passenger 1000000 of airplane 0 arrives to platform
+Passenger 1000001 of airplane 0 arrives to platform
+Passenger 1000002 of airplane 0 arrives to platform
+Passenger 1000003 of airplane 0 arrives to platform
+Passenger 1000004 of airplane 0 arrives to platform
+Passenger 1000005 of airplane 0 arrives to platform
+Passenger 1000006 of airplane 0 arrives to platform
+Passenger 1000007 of airplane 0 arrives to platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1000001 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1000002 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1000003 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1000004 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1000005 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001000 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001001 from the platform
+Airplane 1 arrives with 5 passengers
+Passenger 1001000 of airplane 1 arrives to platform
+Passenger 1001001 of airplane 1 arrives to platform
+Passenger 1001002 of airplane 1 arrives to platform
+Airplane 0 arrives with 5 passengers
+Passenger 1001003 of airplane 1 arrives to platform
+Passenger 1001004 of airplane 1 arrives to platform
+Passenger 1000000 of airplane 0 arrives to platform
+Passenger 1000001 of airplane 0 arrives to platform
+Passenger 1000002 of airplane 0 arrives to platform
+Passenger 1000003 of airplane 0 arrives to platform
+Passenger 1000004 of airplane 0 arrives to platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001002 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001003 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001004 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001005 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001006 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001000 from the platform
+Airplane 1 arrives with 9 passengers
+Passenger 1001000 of airplane 1 arrives to platform
+Passenger 1001001 of airplane 1 arrives to platform
+Airplane 0 arrives with 8 passengers
+Passenger 1001002 of airplane 1 arrives to platform
+Passenger 1001003 of airplane 1 arrives to platform
+Passenger 1001004 of airplane 1 arrives to platform
+Passenger 1000000 of airplane 0 arrives to platform
+Passenger 1000001 of airplane 0 arrives to platform
+Passenger 1000002 of airplane 0 arrives to platform
+Passenger 1000003 of airplane 0 arrives to platform
+Passenger 1000004 of airplane 0 arrives to platform
+Passenger 1000005 of airplane 0 arrives to platform
+Passenger 1000006 of airplane 0 arrives to platform
+Passenger 1000007 of airplane 0 arrives to platform
+Passenger 1001005 of airplane 1 arrives to platform
+Passenger 1001006 of airplane 1 arrives to platform
+Passenger 1001007 of airplane 1 arrives to platform
+Passenger 1001008 of airplane 1 arrives to platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001001 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001002 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001003 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001004 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1000000 from the platform
+Airplane 1 arrives with 7 passengers
+Airplane 0 arrives with 7 passengers
+Passenger 1001000 of airplane 1 arrives to platform
+Passenger 1001001 of airplane 1 arrives to platform
+Passenger 1001002 of airplane 1 arrives to platform
+Passenger 1001003 of airplane 1 arrives to platform
+Passenger 1001004 of airplane 1 arrives to platform
+Passenger 1001005 of airplane 1 arrives to platform
+Passenger 1001006 of airplane 1 arrives to platform
+Passenger 1000000 of airplane 0 arrives to platform
+Passenger 1000001 of airplane 0 arrives to platform
+Passenger 1000002 of airplane 0 arrives to platform
+Passenger 1000003 of airplane 0 arrives to platform
+Passenger 1000004 of airplane 0 arrives to platform
+Passenger 1000005 of airplane 0 arrives to platform
+Passenger 1000006 of airplane 0 arrives to platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1000001 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1000002 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1000003 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1000004 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001000 from the platform
+Airplane 0 arrives with 7 passengers
+Airplane 1 arrives with 7 passengers
+Passenger 1000000 of airplane 0 arrives to platform
+Passenger 1000001 of airplane 0 arrives to platform
+Passenger 1000002 of airplane 0 arrives to platform
+Passenger 1000003 of airplane 0 arrives to platform
+Passenger 1001000 of airplane 1 arrives to platform
+Passenger 1001001 of airplane 1 arrives to platform
+Passenger 1000004 of airplane 0 arrives to platform
+Passenger 1000005 of airplane 0 arrives to platform
+Passenger 1000006 of airplane 0 arrives to platform
+Passenger 1001002 of airplane 1 arrives to platform
+Passenger 1001003 of airplane 1 arrives to platform
+Passenger 1001004 of airplane 1 arrives to platform
+Passenger 1001005 of airplane 1 arrives to platform
+Passenger 1001006 of airplane 1 arrives to platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001001 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001002 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001003 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001004 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001005 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001006 from the platform
+Airplane 1 arrives with 8 passengers
+Airplane 0 arrives with 7 passengers
+Passenger 1001000 of airplane 1 arrives to platform
+Passenger 1001001 of airplane 1 arrives to platform
+Passenger 1001002 of airplane 1 arrives to platform
+Passenger 1001003 of airplane 1 arrives to platform
+Passenger 1001004 of airplane 1 arrives to platform
+Passenger 1001005 of airplane 1 arrives to platform
+Passenger 1001006 of airplane 1 arrives to platform
+Passenger 1001007 of airplane 1 arrives to platform
+Passenger 1000000 of airplane 0 arrives to platform
+Passenger 1000001 of airplane 0 arrives to platform
+Passenger 1000002 of airplane 0 arrives to platform
+Passenger 1000003 of airplane 0 arrives to platform
+Passenger 1000004 of airplane 0 arrives to platform
+Passenger 1000005 of airplane 0 arrives to platform
+Passenger 1000006 of airplane 0 arrives to platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001007 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1000000 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1000001 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1000002 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1000003 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1000004 from the platform
+Airplane 0 arrives with 10 passengers
+Airplane 1 arrives with 5 passengers
+Passenger 1000000 of airplane 0 arrives to platform
+Passenger 1000001 of airplane 0 arrives to platform
+Passenger 1000002 of airplane 0 arrives to platform
+Passenger 1000003 of airplane 0 arrives to platform
+Passenger 1001000 of airplane 1 arrives to platform
+Passenger 1001001 of airplane 1 arrives to platform
+Passenger 1001002 of airplane 1 arrives to platform
+Passenger 1001003 of airplane 1 arrives to platform
+Passenger 1001004 of airplane 1 arrives to platform
+Passenger 1000004 of airplane 0 arrives to platform
+Passenger 1000005 of airplane 0 arrives to platform
+Passenger 1000006 of airplane 0 arrives to platform
+Passenger 1000007 of airplane 0 arrives to platform
+Passenger 1000008 of airplane 0 arrives to platform
+Passenger 1000009 of airplane 0 arrives to platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1000005 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1000006 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1000007 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001000 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001001 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001002 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1001003 from the platform
+Airplane 1 arrives with 8 passengers
+Airplane 0 arrives with 7 passengers
+Passenger 1001000 of airplane 1 arrives to platform
+Passenger 1001001 of airplane 1 arrives to platform
+Passenger 1001002 of airplane 1 arrives to platform
+Passenger 1001003 of airplane 1 arrives to platform
+Passenger 1001004 of airplane 1 arrives to platform
+Passenger 1001005 of airplane 1 arrives to platform
+Passenger 1001006 of airplane 1 arrives to platform
+Passenger 1001007 of airplane 1 arrives to platform
+Passenger 1000000 of airplane 0 arrives to platform
+Passenger 1000001 of airplane 0 arrives to platform
+Passenger 1000002 of airplane 0 arrives to platform
+Passenger 1000003 of airplane 0 arrives to platform
+Passenger 1000004 of airplane 0 arrives to platform
+Passenger 1000005 of airplane 0 arrives to platform
+Passenger 1000006 of airplane 0 arrives to platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1001004 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1000000 from the platform
+Taxi driver 1 arrives
+Taxi driver 1 picks up client 1000001 from the platform
+Taxi driver 0 arrives
+Taxi driver 0 picks up client 1000002 from the platform
