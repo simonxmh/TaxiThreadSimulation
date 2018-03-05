@@ -168,10 +168,7 @@ void *FnTaxi(void *pr_id)
     while(1){
         printf("Taxi driver %i arrives\n",index);
 
-        // if(isEmpty(queue)){
-        //     printf("Taxi driver %i waits for passengers to enter the platform\n",index);
-        //     continue;
-        // }
+        int pickup;
 
         //down full
         sem_wait(&full);
@@ -180,7 +177,12 @@ void *FnTaxi(void *pr_id)
 
 
         //critical section
-        int pickup = dequeue(queue);
+        if(isEmpty(queue)){
+            printf("Taxi driver %i waits for passengers to enter the platform\n",index);
+            continue;
+        } else {
+            pickup = dequeue(queue);
+        }
 
         //up mutex
         pthread_mutex_unlock(&mutex);
