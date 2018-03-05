@@ -23,7 +23,7 @@
 int BUFFER_SIZE = 100; //size of queue
 sem_t full;
 sem_t empty;
-sem_t mutex;
+pthread_mutex_t mutex;
 
 // A structure to represent a queue
 struct Queue
@@ -66,7 +66,7 @@ void enqueue(struct Queue *queue, int item)
     queue->rear = (queue->rear + 1) % queue->capacity;
     queue->array[queue->rear] = item;
     queue->size = queue->size + 1;
-    printf("%d enqueued to queue\n", item);
+    // printf("%d enqueued to queue\n", item);
 }
 
 // Function to remove an item from queue.
@@ -116,7 +116,7 @@ struct Queue *queue;
 /*Producer Function: Simulates an Airplane arriving and dumping 5-10 passengers to the taxi platform */
 void *FnAirplane(void *cl_id)
 {
-    int i, passenger, index;
+    int index;
 
     index = (intptr_t) cl_id;
 
@@ -124,21 +124,22 @@ void *FnAirplane(void *cl_id)
         //make passenger
         int num_passengers = rand() % (10 + 1 - 5) + 5;
         
-        printf("Airplane %i arrives with %i passengers\n", index, num_passengers);
+        printf("Airplane %i arrives with %i passengers\n",index,num_passengers);
 
         //down empty
-        sem_trywait(&empty);
+        sem_wait(&empty);
         //down mutex
-        sem_wait(&mutex);
+        pthread_mutex_lock(&mutex);
 
         //critical section
         for(int p=0;p<num_passengers;p++){
             enqueue(queue,p);
-            printf("ASD");
+            printf("Passenger 1%.3d%.3d of airplane %i arrives to platform\n",index,p,index);
         }
 
         //up mutex
-        sem_post(&mutex);
+        pthread_mutex_unlock(&mutex);
+
         //up full
         sem_post(&full);
 
@@ -150,27 +151,30 @@ void *FnAirplane(void *cl_id)
 /* Consumer Function: simulates a taxi that takes n time to take a passenger home and come back to the airport */
 void *FnTaxi(void *pr_id)
 {
-    int i, passenger, index;
+    int index;
     index = (intptr_t) pr_id;
     while(1){
-        //make passenger
-        passenger = i;
+        printf("Taxi driver %i arrives\n",index);
 
         //down full
         sem_wait(&full);
         //down mutex
-        sem_wait(&mutex);
+        pthread_mutex_lock(&mutex);
+
 
         //critical section
-        dequeue(queue);
+        int pickup = dequeue(queue);
+        printf("Taxi driver %i picks up client %d from the platform\n",index,pickup);
+
 
         //up mutex
-        sem_post(&mutex);
+        pthread_mutex_unlock(&mutex);
+
         //up empty
         sem_post(&empty);
 
         //sleep
-        sleep(1);
+        sleep(0.1);
     }
 }
 
