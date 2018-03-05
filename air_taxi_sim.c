@@ -133,7 +133,11 @@ void *FnAirplane(void *cl_id)
 
         //critical section
         for(int p=0;p<num_passengers;p++){
-            enqueue(queue,p);
+            char str[7];
+
+            sprintf(str,"1%.3d%.3d",index,p);
+            int passenger_id = atoi(str);
+            enqueue(queue,passenger_id);
             printf("Passenger 1%.3d%.3d of airplane %i arrives to platform\n",index,p,index);
         }
 
