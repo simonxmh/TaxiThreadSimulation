@@ -126,6 +126,11 @@ void *FnAirplane(void *cl_id)
         
         printf("Airplane %i arrives with %i passengers\n",index,num_passengers);
 
+        if(isFull(queue)){
+            printf("Platform is full: Rest of passengers of plane %i take the bus",index);
+            continue;
+        }
+
         char str[7];
 
         //critical section
@@ -163,6 +168,11 @@ void *FnTaxi(void *pr_id)
     while(1){
         printf("Taxi driver %i arrives\n",index);
 
+        // if(isEmpty(queue)){
+        //     printf("Taxi driver %i waits for passengers to enter the platform\n",index);
+        //     continue;
+        // }
+
         //down full
         sem_wait(&full);
         //down mutex
@@ -183,8 +193,8 @@ void *FnTaxi(void *pr_id)
 
         //sleep for 10 to 30 minutes
         int taxi_interval = rand() % (30 + 1 - 10) + 10;
-
-        sleep(taxi_interval/60);
+        // printf("%d\n",(double)taxi_interval/60.0 * 1000000);
+        usleep((double)taxi_interval/60.0 * 1000000);
     }
     
 }
