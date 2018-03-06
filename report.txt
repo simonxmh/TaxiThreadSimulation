@@ -1,0 +1,11 @@
+1) Explain why you need to use synchronization tools to properly model this process. What would
+happen if you did not use synchronization tools (i.e. describe a problem that would occur each time a
+synchronization primitive is omitted)?
+
+The producer-consumer problem presented here demonstrates a need for the synchronization tools used. 
+The two tools that were needed were a semaphore and a mutual exclusion lock. The semaphores solve
+the problem wherein there would be lost wake up calls were we to implemented the problem using an item
+count to restrict items from being produced/consumed. Therefore were we to not use semaphores, the 
+producer and the consumer may both fall asleep due to a race condition, and lead to a deadlock.
+There is also an issue where the producers can all be trying to place items into the queue simultaneously,
+which leads to loss of the item, and this is the problem if the mutual exclusion lock is not implemented.
