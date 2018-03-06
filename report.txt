@@ -1,3 +1,6 @@
+Name: Xi Meng Huang
+McGill ID: 260608596
+
 1) Explain why you need to use synchronization tools to properly model this process. What would
 happen if you did not use synchronization tools (i.e. describe a problem that would occur each time a
 synchronization primitive is omitted)?
@@ -5,7 +8,22 @@ synchronization primitive is omitted)?
 The producer-consumer problem presented here demonstrates a need for the synchronization tools used. 
 The two tools that were needed were a semaphore and a mutual exclusion lock. The semaphores solve
 the problem wherein there would be lost wake up calls were we to implemented the problem using an item
-count to restrict items from being produced/consumed. Therefore were we to not use semaphores, the 
-producer and the consumer may both fall asleep due to a race condition, and lead to a deadlock.
-There is also an issue where the producers can all be trying to place items into the queue simultaneously,
-which leads to loss of the item, and this is the problem if the mutual exclusion lock is not implemented.
+count to restrict items from being produced/consumed(since producer cannot add to full queue and consumer 
+cannot take from empty queue). Therefore were we to not use semaphores, the producer and the consumer may 
+both fall asleep due to a race condition, and lead to a deadlock. There is also an issue where the producers 
+can all be trying to place items into the queue simultaneously, which leads to loss of the item as a result 
+of the race condition, and this isthe problem if the mutual exclusion lock is not implemented. By using these 
+synchronization tools, we ensure that the producer and consumer processes do not fall into a deadlock and have
+loss of information due to race conditions.
+
+
+2) Experiment with [2, 5, 10] airplanes arriving each hour and [100, 10, 2] taxis. Print out what each
+taxi and airplane is doing and include that print-out in your report. Let your program run for 10 “hours”
+(airplane arrivals).
+
+The experiment results logs are all presented one by one in the accompanying files.
+
+3) Describe any issues you may have in your code which you believe is making it run incorrectly (i.e.
+any known bugs). This would you get partial marks in case your code is not fully functional.
+
+I don't think there are any issues with the code such that it is running incorrectly.
